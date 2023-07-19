@@ -8,12 +8,13 @@
         div{box-sizing: border-box; border: 1px solid red;}
 
         .wrap{
-            height: 900px;
+            height: 1000px;
             width: 800px;
             margin: auto;
            
         }
 
+        /*header, content, footer의 공통점 : 가로 길이 모두 동일*/
         .wrap>div{
             width: 100%;
         }
@@ -26,6 +27,7 @@
             height: 60%;
         }
 
+        /*header_1, header_2의 공통점 : 세로 길이 모두 동일 => 부모의 100%*/
         #header>div{
             height: 100%;
             float: left;
@@ -41,6 +43,7 @@
          
         }
 
+        /*content_1,content_2,content_3의 공통적인 특성 : 세로 길이 모두 동일 => 부모의 100%*/
         #content>div{
             height: 100%;
             float: left;
@@ -66,7 +69,7 @@
 
 </head>
 <body>
-    <div class="wrap">
+    <div class="wrap"> 
         <div id="header">
             <div id="header_1"></div>
             <div id="header_2"></div>
