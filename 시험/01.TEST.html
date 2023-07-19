@@ -6,12 +6,12 @@
     <title>포토폴리오 문제</title>
     <style>
         thead,tfoot{
-            background-color: orange;
+            background-color: rgb(248, 142, 55);
             color: white;
         }
 
         tbody{
-            background-color: antiquewhite;
+            background-color: rgb(249, 239, 225);
 
         }
     </style>
@@ -23,11 +23,13 @@
 
     <fieldset>
         <legend>공지사항 작성하기</legend>
-        
+        <table>
+            
+        </table>
         제목 <input type="text" name="title" placeholder="제목을 입력하시오."> <br>
-        내용 <textarea name="content" placeholder="내용을 입려하시오." style="resize: none;"></textarea><br>
-        첨부파일 <input type="file" name="uploadFile"> <br>
-        <input type="submit" value="작성하기">
+        내용 <textarea name="content" placeholder="내용을 입려하시오." cols="35" rows="10" style="resize: none;"></textarea><br>
+        첨부파일 <input type="file" name="uploadFile">
+        <pre>             <input type="submit" value="작성하기"> </pre>
 
     </fieldset>
 
