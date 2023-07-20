@@ -10,7 +10,7 @@
             color: white;
         }
 
-        tbody{
+        #tt{
             background-color: rgb(249, 239, 225);
 
         }
@@ -23,34 +23,47 @@
 
     <fieldset>
         <legend>공지사항 작성하기</legend>
-        <table>
-            
-        </table>
-        제목 <input type="text" name="title" placeholder="제목을 입력하시오."> <br>
-        내용 <textarea name="content" placeholder="내용을 입려하시오." cols="35" rows="10" style="resize: none;"></textarea><br>
-        첨부파일 <input type="file" name="uploadFile">
-        <pre>             <input type="submit" value="작성하기"> </pre>
-
+        <form action="insert.no" method="post">
+            <table>
+                <tr>
+                    <th>제목</th>
+                    <td><input type="text" name="title" placeholder="제목을 입력하시오." size="33" required ></td>
+                </tr>
+                <tr>
+                    <th>내용</th>
+                    <td><textarea name="content" placeholder="내용을 입려하시오." cols="35" rows="10" style="resize: none;" required></textarea></td>
+                </tr>
+                <tr>
+                    <th>첨부파일</th>
+                    <td><input type="file" name="uploadFile"></td>
+                </tr>
+                <tr>
+                    <th colspan="2"><input type="submit" value="작성하기"></th>
+                </tr>
+            </table>
+        </form>
     </fieldset>
-
+    <br>
 
     <hr>
+    
+    <br>
     
     <table border="1">
         <thead>
             <tr>
                 <th>번호</th>
-                <th colspan="2">제목</th>
-                <th>작성자</th>
-                <th>작성일</th>
+                <th colspan="2" >제목</th>
+                <th width="100">작성자</th>
+                <th width="130">작성일</th>
                 <th>조회수</th>
             </tr>
         </thead>
         
-        <tbody>
+        <tbody id="tt">
             <tr>
                 <td>9</td>
-                <td>공지사항 제목 9</td>
+                <td width="450">공지사항 제목 9</td>
                 <td><button>바로가기</button></td>
                 <td>user01</td>
                 <td>2021-03-29</td>
