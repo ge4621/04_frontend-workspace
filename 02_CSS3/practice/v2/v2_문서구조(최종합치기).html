@@ -39,15 +39,15 @@
         #footer_2{height: 80%;}
 
         #footer_2>p{
-            margin: 0;
+            margin: 3px;
             width: 100%;
             box-sizing: border-box;
-            font-size: 13px;
+            font-size: 12px;
             color: black;
         }
 
-        #p1{height: 80%;padding: 7px 15px;}
-        #p2{height: 20%;text-align: center;}
+        #p1{height: 80%;padding: 5px 14px;}
+        #p2{height: 20%;text-align: center; }
 
         #footer_1>a{
             text-decoration: none;
@@ -59,15 +59,17 @@
 
         #footer{
             border: 1px solid black;
-            margin: 2px;
-
+            margin: 8px;
+            width: 990px;
+            height: 145px;
+            
         }
 
 
         /*#contetn_1 관련 스타일*/
         #content_1_1>img{
             width: 99%;
-            height: 180px;
+            height: 179px;
             margin: 3px;
             padding: 1px;
         }
@@ -81,17 +83,17 @@
         
         #content_1_1{
             border: 1px solid black;
-            margin: 2px;
+            margin: 6px;
         }
 
         #content_1_2{
             border: 1px solid black;
-            margin: 2px;
+            margin: 6px;
         }
 
         #content_1_3{
             border: 1px solid black;
-            margin: 2px;
+            margin: 6px;
         }
 
         #p1{
@@ -110,10 +112,11 @@
         #navi{
             list-style-type: none;
             padding: 0;
-            margin: 2px;
+            margin: 2px ;
             height: 100%;
             border: 1px solid black;
-           
+           width: 99.4%;
+           margin-left: 5px;
         }
 
         #navi>li{
@@ -127,7 +130,7 @@
             text-decoration: none;
             color: black;
             font-size: 18px;
-            font-weight: 800;
+            font-weight: 600;
             width: 100%;
             height: 100%;
             display: block;
@@ -142,10 +145,11 @@
         #content_2_2{height: 60%;}
 
         #shopping{
-            height: 98%;
-            width: 98%;
+            height: 98.7%;
+            width: 99%;
             border: 1px solid black; 
-            margin: 2px;
+            margin-top: 8px;
+
         }
 
         /*로그인 관련 스타일*/
@@ -156,33 +160,74 @@
 
         #login_form_input>*{height: 100%; float: left;}
         #login_input_id_pwd{width: 60%;}
-        #login_input_btn{width: 40%; ; padding: 4%;}
+        #login_input_btn{width: 40%;}
 
-        #login_input_id_pwd>input{width: 95%; height: 50%; box-sizing: border-box;}
-        #login_input_btn>input{width: 100%; height: 100%;}
+        #login_input_id_pwd>input{
+            width: 115%;
+             height: 60px;
+             margin-left: px;
+             
+            }
+        #login_input_btn>input{
+            width: 70%;
+            height: 132px;
+            margin-left: 34.8px;
+        }
+
+        
 
         #login_form_ect>a{
             text-decoration: none;
             color: black;
-            font-size: 12px;
-            margin: 10px;
+            font-size: 15px;
+            margin: 3px;
             vertical-align: middle;
         }
 
-        #content_2_1{
+        #login_from{
             border: 1px solid black;
-            
+            margin-top:6px;
+           height: 198px;
         }
+
+       
 
 
         /*상단 로고*/
-        #header{border: 1px solid black; margin: 1px;}
+        #header{
+            border: 1px solid black;
+            margin: 5px;
+            width: 997px;
+        }
 
         #logo{
             width: 50%;
             margin: 10px 65px;
         }
         
+
+        #header>#header_2{
+            width: 40%;
+        }
+        
+        #search{
+            width: 35px;
+            height: 30px;   
+        }
+
+        #header_2>#searchbar{
+            position: absolute;
+            width: 340px;
+            height: 33px;
+            margin-top: 50px;
+            margin-left: px;
+        }
+
+        button{
+            float: right;
+            margin-top: 50px;
+        }
+
 
     </style>
 
@@ -194,7 +239,11 @@
             <div id="header_1">
                 <img src="resources_v2/image2/logo.PNG" id="logo">
             </div>
-            <div id="header_2"></div>
+            <div id="header_2">
+                <input type="text" id="searchbar">
+                <!-- <img src="resources_v2/image2/search.png" id="search"> -->
+                <button><img src="resources_v2/image2/search.png" id="search"></button>
+            </div>
             <div id="header_3"></div>
         </div>
         <div id="navigatior">
