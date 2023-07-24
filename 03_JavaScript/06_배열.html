@@ -106,7 +106,7 @@
         function indexOfTest(){
             const area2 = document.getElementById("area2");
 
-            const arr = ["사과", "딸기", "바나나", "복숭아", "파인에플"];
+            const arr = ["사과", "딸기", "바나나", "복숭아", "파인애플"];
             const fruit = prompt("찾고자 하는 과일명 입력");
 
             const index = arr.indexOf(fruit); //해당 요소를 찾지 못하면 -1반환한다.
@@ -150,6 +150,8 @@
                 area3.innerHTML += "다시 arr1 : " + arr1 + "<br>";
                 //원본 배열에 영향을 끼치지 않는 메소드
                 //두개의 배열을 합쳐서 새로운 배열로 반환
+
+                //기준 배열을 먼저 제시 => 기준배열.concat(나머지 배열)
 
                 area3.innerHTML += "arr2 기준으로 배열 합침 : " + arr2.concat(arr1,[1,2,3]); 
             }
@@ -219,7 +221,7 @@
                 const arr = ["신곡동", "용현동","고산동","민락동","가능동"];
 
                 area6.innerHTML += "arr : " + arr+ "<br>";
-                area6.innerHTML += "arr에 pust 후 배열의 크기 : " + arr.push("의정부동") +"<br>"
+                area6.innerHTML += "arr에 pust 후 배열의 크기 : " + arr.push("의정부동") +"<br>" 
                 area6.innerHTML += "arr : " + arr+ "<br>"; 
                 //원본 배열에 영향을 끼치는 메소드
                 arr.push("도봉구");

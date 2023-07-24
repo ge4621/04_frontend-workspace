@@ -16,13 +16,13 @@
 
     <div class="area" id="area1" style="background-color: black;"></div>
 
-    <input type="color" id="color">
+    <input type="color" id="color"> <!--색 변경 바-->
     <button onclick="colorchange();">변경</button>
    
     <script>
         function colorchange(){
-            var box = document.getElementById("color").value;
             var area1 = document.getElementById("area1");
+            var box = document.getElementById("color").value;
             
             area1.style.backgroundColor=box;
         }

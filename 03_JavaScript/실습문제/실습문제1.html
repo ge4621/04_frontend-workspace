@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>실습문제1</title>
-    
+    <style>
+       
+    </style>
 </head>
 <body>
 <h1>행 열 각각 입력 받아 테이블 만들기</h1>
@@ -24,9 +26,9 @@
             for(var j = 1; j<= row ; j++){
                 str += "<td></td>";
             }
-            if(i==num){
+            if(i==num){//표 완성
                str +="</tr></table>";
-            }else{
+            }else{//표 계속
                 str += "</tr>";
             }
           }

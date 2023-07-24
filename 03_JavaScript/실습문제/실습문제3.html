@@ -26,9 +26,9 @@
     <script>
         function num(){
             var area = document.getElementById("area1")
-            var name2 = document.getElementsByTagName("input")[0].value;
-            var product2 = document.getElementById("product").value;
-            var price2 = document.getElementsByName("price")[0].value;
+            var name2 = document.getElementsByTagName("input")[0].value; //구매자 태그이름으로 접근
+            var product2 = document.getElementById("product").value; //구매 상품 아이디로 접근
+            var price2 = document.getElementsByName("price")[0].value; //가격 이름으로 접근
             
             area.innerHTML = "구매자 : " + name2 +"<br>"+ "구입상품 : " + product2 +"<br>"+"구매가격 : " + price2;
         }
