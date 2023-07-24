@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제1</title>
+    
+</head>
+<body>
+<h1>행 열 각각 입력 받아 테이블 만들기</h1>
+    
+<button onclick="table();">테이블 생성</button>
+<div id="table1"></div>
+
+<script>
+    function table(){
+        var num = prompt("몇 행을 추가 하시겠습니까?");
+        var row = prompt("몇 열을 추가하시겠습니까?")
+
+        var str = "<table border='1'>";
+
+          for(var i = 1 ; i<= num ;i++){
+            str += "<tr>";
+            for(var j = 1; j<= row ; j++){
+                str += "<td></td>";
+            }
+            if(i==num){
+               str +="</tr></table>";
+            }else{
+                str += "</tr>";
+            }
+          }
+          var divEl = document.getElementById("table1")
+          divEl.innerHTML=str;
+         
+    }
+</script>
+
+
+
+<hr>
+
+<h1>행 열을 각각 입력 받아서 새 화면에서 출력하기</h1>
+<button onclick="table2();">테이블 새 화면 생성</button>
+<div id="table2"></div>
+
+<script>
+    function table2(){
+        var num1 = prompt("몇 행을 추가 하시겠습니까?");
+        var row1 = prompt("몇 열을 추가하시겠습니까?")
+ 
+        var str = "<table border='1'>";
+        let num = 1;
+
+        for(var i = 1 ; i<= num1 ;i++){
+        str += "<tr>";
+        for(var j = 1; j<= row1 ; j++){
+            str += "<td>"+num+"</td>";
+            num++;
+        }
+        if(i==num1){
+            str +="</tr></table>";
+        }else{
+            str += "</tr>";
+        }
+        }
+        
+        document.write(str);
+
+
+
+
+    }
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

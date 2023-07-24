@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제2</title>
+    <style>
+        .area{border: 1px solid black;
+        width: 100px;
+        height: 100px;}
+
+    </style>
+</head>
+<body>
+    <h1>1. 색상 선택 후 변경 버튼을 클릭하면 색상이 변경되도록 만들어 보시오</h1>
+
+    <div class="area" id="area1" style="background-color: black;"></div>
+
+    <input type="color" id="color">
+    <button onclick="colorchange();">변경</button>
+   
+    <script>
+        function colorchange(){
+            var box = document.getElementById("color").value;
+            var area1 = document.getElementById("area1");
+            
+            area1.style.backgroundColor=box;
+        }
+    </script>
+
+    <hr>
+
+    <h1>2.버튼에 따라 크기 조절이 가능하게 만들기</h1>
+    <div class="area" id="area2" style="background-color: black;"></div>
+
+    <button onclick="half();">50x50</button>
+    <button onclick="origin();">원본(100x100)</button>
+    <button onclick="two();">200x200</button>
+
+    <script>
+        function half(){
+            var area2 = document.getElementById("area2")
+
+            area2.style.width="50px";
+            area2.style.height="50px";
+        }
+
+        function origin(){
+            var area2 = document.getElementById("area2")
+
+            area2.style.width="100px";
+            area2.style.height="100px";
+        }
+
+        function two(){
+            var area2 = document.getElementById("area2")
+
+            area2.style.width="200px";
+            area2.style.height="200px";
+        }
+    </script>
+
+    <hr>
+
+    <div class="area" id="area3" style="background-color: black;"></div>
+
+    <button onclick="size('s');">50x50</button>
+    <button onclick="size('m');">원본(100x100)</button>
+    <button onclick="size('l');">200x200</button>
+
+
+    <script>
+        function size(value){
+            var area = document.getElementById("area3")
+            if(value == 's'){
+                area3.style.width="50px";
+                area3.style.height="50px";
+            }else if(value=='m'){
+                area3.style.width="100px";
+                area3.style.height="100px";
+            }else if(value=='l'){
+                area3.style.width="200px";
+                area3.style.height="200px";
+            }
+        }
+    </script>
+
+
+
+
+</body>
+</html>
