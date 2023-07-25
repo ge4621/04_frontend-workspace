@@ -12,6 +12,8 @@
     </style>
 </head>
 <body>
+    <h1>배열 실습 문제1</h1>
+    <br>
     <fieldset>
         <legend>보기</legend>
         <p id="a">사과,바나나,당근</p>
@@ -29,16 +31,20 @@
             const c = document.getElementById("c").innerHTML;
             const d = document.getElementById("d").innerHTML;
 
-
-
             const arr = a.split(",");
             const brr = b.split(",");
             const crr = c.split(",");
             const drr = d.split(",");
-            
-            
 
+            const input = document.getElementById("input").value;
+
+           const sarr = arr.concat(brr,crr,drr); 
+
+           const index = sarr.indexOf(input)
             
+            alert(input + "는 index "+ index+"번째에 존재합니다.");
+
+            //console.log(sarr);
 
         }
     </script>

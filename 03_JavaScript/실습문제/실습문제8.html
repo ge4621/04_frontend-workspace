@@ -7,25 +7,30 @@
    
 </head>
 <body>
+    <h1>배열 실습 문제3</h1>
+    <br>
     <fieldset>
         <legend>입력</legend>
-        <input type="text" id="text"> <!--입력창-->
-        <button onclick="a();">입력</button> <!--버튼-->
+        <input type="text" id="input"> <!--입력창-->
+        <button onclick="test();">입력</button> <!--버튼-->
     </fieldset>
-    <input type="text" id="text1"> <!--결과창-->
+    <input type="text" id="box"> <!--결과창-->
 
     <script>
-        function a(){
-            const text = document.getElementById("text"); 
-            const input = document.getElementById("text1"); 
-            
+        function test(){
+            const input = document.getElementById("input").value;
+            //const box = document.getElementById("box");
+           //box.value += input;
 
-            
-            
 
-           
+           document.getElementById("box").value +=input;
+
+           input.value = " ";
+
+
         }
     </script>
+
 
 
 
