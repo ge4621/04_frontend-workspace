@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제9</title>
+    <style>
+        .area{
+            border: 1px solid red;
+            height: 30px;
+            width: 500px;
+        }
+
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>보기</legend>
+        <p id="p">피자 치킨 당근 햄버거 떡볶이 </p>
+    </fieldset>
+    <input type="text" id="dfood" placeholder="삭제할 음식이름을 입력하세요">
+    <input type="text" id="food" placeholder="추가할 음식이름을 입력하세요.">
+    <div id="area1" class="area"></div>
+    <br><br>
+    <button onclick="submit();">처리 및 출력</button>
+
+    <script>
+        function submit(){
+            const dfood = document.getElementById("dfood").value;
+            const food = document.getElementById("food").value;
+            const area1 = document.getElementById("area1");
+            const p = document.getElementById("p").innerHTML;
+
+            const arr = p.split(" ");
+
+            arr.splice(arr.indexOf(dfood),1,food);
+            
+            area1.innerHTML =arr;
+
+        }
+    </script>
+
+
+
+</body>
+</html>

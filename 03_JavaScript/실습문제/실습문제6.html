@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제6</title>
+    <style>
+        .area{
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>보기</legend>
+        <p id="a">사과,바나나,당근</p>
+        <p id="b">김밥,치즈,떡볶이,햄버거</p>   
+        <p id="c">환타,사이다,콜라</p> 
+        <p id="d">고양이,강아지</p>
+    </fieldset>
+    <input type="text" id="input"> <br>
+    <button onclick="box();">전송 및 처리</button>
+
+    <script>
+        function box(){
+            const a = document.getElementById("a").innerHTML;
+            const b = document.getElementById("b").innerHTML;
+            const c = document.getElementById("c").innerHTML;
+            const d = document.getElementById("d").innerHTML;
+
+
+
+            const arr = a.split(",");
+            const brr = b.split(",");
+            const crr = c.split(",");
+            const drr = d.split(",");
+            
+            
+
+            
+
+        }
+    </script>
+
+
+
+</body>
+</html>
