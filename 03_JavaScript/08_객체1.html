@@ -53,8 +53,8 @@
             //자바스크립트에서의 객체 == 자바에서의 컬렉션(HashMap)
 
             console.log(product);
-
-            console.log(typeof(product));
+          
+            console.log(typeof(product)); //자료형 확인
 
             const area1 = document.getElementById("area1");
             area1.innerHTML += "product : " + product + "<br>"; //toString() 자동으로 호출됨 => 우리가 나중에 재정의 해볼거임
@@ -117,8 +117,8 @@
 
     <script>
         function test3(){
-            const arr = ["문동은",10,true];
-            for(let i in arr){ //i=0, 1, 2
+            const arr = ["문동은",10,true]; //배열 생성 및 초기화
+            for(let i in arr){ //i=0, 1, 2 (i에는 인덱스가 들어간다.)
                 console.log(arr[i]);
             }
             //in 뒤에 배열 제시시
@@ -146,7 +146,7 @@
     </script>
 
     <hr>
-    <h3>*객체의 메소드 속성</h3>
+    <h3>*객체의 메소드 속성  **********다시*****</h3>
     <p>객체의 속성 중 함수자료형인 속성을 메소드 라고 부름!</p>
 
     <button onclick="test4();">실행확인</button>
@@ -170,12 +170,6 @@
                     //area4.innerHTML += this.kind + "종류인 " + name + "가 " + food+"을(를) 먹고있어요. <br>"
                     area4.innerHTML += this.kind + "종류인 " + this.name + "가 " + food+"을(를) 먹고있어요. <br>"
                     //메소드 속서에서 같은 객체내의 속성에 접근하고자 한다면 this.을 붙여야 한다.
-
-
-
-
-
-
                 }
             
             };
