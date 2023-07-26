@@ -105,16 +105,76 @@
                 return this.getSum() / 5; 
             }
 
-
-
         }
-
-
 
     </script>
 
+    <hr>
+
+    <h3>* Date 내장객체</h3>
+
+    <button onclick="test3();">실행확인</button>
+    <div id="area3" class="area"></div>
+
+    <script>
+        function test3(){
+            const area3 = document.querySelector("#area3");
+
+            //현재 날짜 및 시간
+            const date1 = new Date();
+
+            //2023년05월 24일로 셋팅
+            const date2 = new Date(2023,5-1,24); //월을 -1해야 원하는 날짜로 셋팅이 가능해진다.
+
+            //시분초 까지 
+            const date3 = new Date(2023,5-1,24,15,20,30);
+
+            //밀리세컨초까지
+            //1s == 1000ms
+            //5s == 5000ms
+
+            const date4 = new Date(2023, 5-1 ,24, 15,20,30,5000);
+
+            area3.innerHTML += "Date() : " + date1 + "<br>";
+            area3.innerHTML += "Date(년도, 월, 일) : " + date2 + "<br>";
+            area3.innerHTML += "Date(년도, 월, 일,시,분,초) : " + date3 + "<br>";
+            area3.innerHTML += "Date(년도, 월, 일,시,분,초,밀리세컨) : " + date4 + "<br>";
+
+            //오늘날짜에서 년도만
+            area3.innerHTML += "년도 : " +date1.getFullYear() +"<br>";
+
+            //오늘 날짜에서 월만 (+1을 해야 제대로 나온다.)
+            area3.innerHTML += "월 : " + (date1.getMonth()+1) + "<br>";
+
+            //오늘 날짜에서 일만
+            area3.innerHTML += "일 : " + date1.getDate() + "<br>";
+
+            //자바에서 요일마다 정해둔 숫자가 있다. 수요일은 3
+            area3.innerHTML +="일 : " + date1.getDay() + "<br>";
+
+            //시 : gdtHours() , 분 : getMinutes(), 초 : getSecounds()
+            //d-day 계산시 많이 쓴다.
+
+            //현재날짜부터 종강일(2023년 11월 6일) 까지 남은 일수 디데이
+            const end = new Date(2023,11-1,6); //종강일
+            const now = new Date();//현재날짜
+
+            area3.innerHTML += (end - now); 
+            //현재 날짜부터 종강날짜까지 몇 밀리세컨초 남았는지 알려주고 있다.
+
+            /*
+                1s == 1000ms
+                1m == 60s == 60*1000ms
+                1h == 60m == 60*60s == 60*60*1000ms
+                1d == 24h == 24*60m == 24*60*60s == 24*60*60*1000ms            
+            */
+
+            const dday = (end-now) / (24*60*60*1000); //일단위
+            alert("종강까지" + Math.round(dday)+ "일 남았습니다.")
 
 
+        }
+    </script>
 
 
     
