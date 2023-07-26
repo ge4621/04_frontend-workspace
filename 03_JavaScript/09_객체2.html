@@ -39,13 +39,13 @@
 
             //객체, 속성 = 새로운 값;
             for(let i in students){ //i = 0 => i = 1 => i = 2 ....
-                students[i].javascript = 100;
+                students[i].javascript = 100;  //메소드??추가
                 students[i].getSum = function(){
                     return this.java + this.oracle + this.html + this.css + this.javascript;
                 };
                 students[i].getAvg = function(){
                     return this.getSum() / 5;
-                }
+                };
             }
             const area1 = document.getElementById("area1");
 
@@ -83,11 +83,9 @@
                                                             +", 총점 : " + students[i].getSum()
                                                             +", 평균 : " + students[i].getAvg() + "<br>";
             }
-
-
         }
 
-        //생성자 함수=> 함수의 이름의 첫글자가 대문자
+        //생성자 함수=> 함수의 이름의 첫글자가 대문자 => Student에서 S 대문자
         function Student(name, java,oracle,html,css,javascript){//자바에서 매개변수 생성자와 비슷 
            //일반속성 정의
             this.name = name;
@@ -118,7 +116,7 @@
 
     <script>
         function test3(){
-            const area3 = document.querySelector("#area3");
+            const area3 = document.querySelector("#area3"); // querySelector 사용시 아이디로 접근인지 클래스로 접근인지 직접 제시
 
             //현재 날짜 및 시간
             const date1 = new Date();
@@ -153,6 +151,7 @@
             area3.innerHTML +="일 : " + date1.getDay() + "<br>";
 
             //시 : gdtHours() , 분 : getMinutes(), 초 : getSecounds()
+           
             //d-day 계산시 많이 쓴다.
 
             //현재날짜부터 종강일(2023년 11월 6일) 까지 남은 일수 디데이

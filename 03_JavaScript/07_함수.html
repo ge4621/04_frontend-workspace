@@ -131,6 +131,8 @@
     <input type="button" value="버튼3" onclick="test4(this.value);"> <!-- 버튼 3을 출력하고 싶으면 버튼3이라는 값을 갖고 있는 속성을 입력-->
     <button id="btn4" onclick="test4(this.id)">버튼4</button>
 
+    <input type="button" value="버튼4" onclick="test4()">
+
 
     <script>
         function test4(a){ //test4를 호출할 경우 값이 a에 담김 ex) test4(안녕); 일경우 a에 "안녕"이 들아간다.
@@ -140,7 +142,7 @@
 
     <br><br>
 
-    <button onclick="test5(this);">클릭</button> <!--매개변수 하난 받을 수 있다-->
+    <button onclick="test5(this);">클릭</button> <!--매개변수 하나 받을 수 있다-->
 
 
     <script>
@@ -165,8 +167,8 @@
         function ran(){
             const random = parseInt(Math.random() *100 + 1); //시작수는 더하고 끝수는 곱한다. 
             return random;
-        }
-
+        } //랜덤 함수
+ 
         function test6(){
             const area5 = document.getElementById("area5");
             area5.innerHTML += "랜던값 : " + ran() + "<br>";
@@ -185,15 +187,11 @@
             let inputEl = document.getElementById("userName");
             //console.log(inputEl.value);
             return function(){
-                alert(inputEl.value); //실행하는게 아니라 리턴해주겠다.
+                alert(inputEl.value); //실행하는게 아니라 리턴해주겠다. 값을 보기 위해서는 실행해줘야 한다. 
             }
             //리턴이 이루어 졌으면 실행하기 위한 코드가 있어야 한다. 그래서 test7()();가 됨
-
-
         }
     </script>
-
-
 
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
