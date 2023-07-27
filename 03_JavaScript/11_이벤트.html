@@ -57,8 +57,8 @@
         요소 내부에 직접적으로 이벤트 속성 제시해서 실행할 내용을 정의하는 방식
         주로 script태그 내에 정의돼있는 함수 호출하는 방식을 선호
     </p>
-    <button onclick="document.getElementById('area2').innerHTML += '첫번째 버튼 클릭 <br>';">실행확인</button> <!--가독성이 떨어진다.-->
-    <button onclick="test1();">실행확인</button>
+    <button onclick="document.getElementById('area2').innerHTML += '첫번째 버튼 클릭 <br>';">실행확인1</button> <!--가독성이 떨어진다.-->
+    <button onclick="test1();">실행확인2</button>
 
     <div id="area2" class="area"></div>
 
@@ -78,7 +78,7 @@
         IE는 9버전 부터 지원
     </p>
 
-    <!--요소 내부에 직접적으로 이벤트 속성 기술하지 않는다.-->
+    <!--요소 내부에 직접적으로 이벤트 속성 기술하지 않는다.(고전적인 방식과 비슷)-->
     <button id="btn3">실행확인</button>
 
     <script>
@@ -91,19 +91,210 @@
             alert("표준 이벤트 모델 테스트");
         });
 
-        btn3.addEventListener("mouseenter", function(){
+        btn3.addEventListener("mouseenter", function(){  //마우스 클릭마크가 올라가는것
             btn3.style.backgroundColor = "red";
         });
 
-        btn3.addEventListener("mouseout", function(){
+        btn3.addEventListener("mouseout", function(){ //마우스 클릭마크가 내려오는 것
             btn3.style.backgroundColor="yellow";
         })
 
         //이거 두개 결합되면 hover
+    </script>
 
+    <hr>
+
+    <h2>2. 현재 이벤트가 발생한 해당 요소 객체에 접근하는 방법 </h2>
+
+    <button id="btn4">고전이벤트방식</button>
+    <button id="btn5">표준이벤트방식</button>
+    <button onclick="test2();">인라인이벤트방식</button>
+    <button onclick="test3(this);">인라인이벤트방식2</button>
+
+    <script>
+        //고전이벤트 방식
+        document.getElementById("btn4").onclick = function(e){ //이벤트핸들러(함수대입하는것) e => 이벤트 그 자체
+            console.log(e);//이벤트핸들러를 사용하면 이벤트를 정의하지 않아도 이벤트가 따라온다.
+            console.log(window.event); //매개변수 넘기기 싫으면 이방법으로 확인할 수 있다.
+            
+            //현재 이벤트가 발생한 요소객체에 접근하고자 한다면
+            //console.log(e); //이벤트에 대한 정보
+            console.log(e.target);
+            console.log(window.event.target);
+
+            console.log(this); //선택한 부분(현재 객체 표현, 위의 2가지하고 결과는 같다.)
+            
+            e.target.innerHTML = "버튼 클릭됨";
+            window.event.target.style.backgroundColor ="red";
+            this.style.color = "white";
+        } 
+
+        //표준이벤트 방식
+        document.getElementById("btn5").addEventListener("click",function(e){ //이벤트 핸들러
+            console.log(e.target);
+            console.log(window.event.target);
+            console.log(this);
+        })
+
+        //인라인 이벤트 방식
+        function test2(e){
+            //console.log(e);//넘겨 받은 이벤트가 없기 때문에 undefined가 뜬다.
+            console.log(window.event.target); //가능
+            console.log(this);//window객체를 가리킴
+            window.event.target.innerHTML = "버튼변경";
+
+        }
+
+        function test3(el){
+            console.log(el);
+            el.style.backgroundColor="red";
+            el.style.color= "yellow";
+        }
+    </script>
+
+    <hr>
+
+    <h2>***3. 태그별로 기본적으로 가지고 있는 이벤트 제거</h2>
+
+    <p>
+        기본적으로 이벤트를 가지고 있는 요소 <br>
+        - a <!--(<a href=""></a>)--> 태그 : 클릭시 href에 제시되어 있는 url로 요청하는 기본이벤트 보유 <br>
+        - form <!--(<form action=""></form>)--> 태그 내의 submit 버튼 : 클릭시 사용자가 입력한 값들은 action에 제시되어 있는 url로 제출하면서 요청하는 기본이벤트 보유
+        <br><br>
+
+        태그내에 기본적으로 설정되어 있는 이벤트가 실행 안되게끔 막고싶음 <br>
+        => 이벤트 핸들러의 return 값을 false로 하면 기본이벤트가 실행되지 않는다.
+    </p>
+    
+    <!--기본 이벤트가 있는 요소에 다시 또 이벤트 속성을 부여하면 현재 이 코드가 먼저 실행됨(내가 준 이벤트가 우선순위)-->
+    <a href="http://www.naver.com" onclick="alert('ㅋㅋㅋㅋㅋ'); return false">네이버로 이동</a>
+    <!--return false를 쓰면 기본 이벤트 막는다.-->
+
+    <a href="http://www.google.com" onclick="return test4();">구글로 이동</a>
+    <script>
+        function test4(){
+            alert("안녕하세요");
+            
+            return false; //이렇게 하면 false가 test4()안에 가만이 있는다. 이게 적용되게 하기 위해서는 false가 href에 가야 한다.
+            //기본 이벤트를 향해서 return false가 되어야 하는 데 test4를 향해서 return false가 됨...
+    
+        }
+    </script>
+    <form action="test.do" method="get">
+        아이디:
+        <input type="text" name="userId" id="userId"> <br>
+        비밀번호:
+        <input type="password" name="userPwd" id="userPwd"> <br>
+
+        비밀번호 확인: <!--비교 용 서버에 넘기 필요 없음 => name값 필요 없다.-->
+        <input type="password" id="checkPwd"><!--앤 굳이 서버로 안넘겨도 됨. 굳이 name 안써도됨-->
+        
+        <input type="submit" onclick="return validate();">
+        <!--기본 이벤트를 수행하기 전에 비번과 비번 확인이 맞는 건지 확인 후 전송-->
+
+    </form>
+
+    <script>
+        function validate(){
+            //비밀번호에 대한 유효성
+            const userPwd = document.getElementById("userPwd").value; //input이여서 value
+            const checkPwd = document.getElementById("checkPwd").value;
+
+            const userId = document.getElementById("userId").value; //값을 가져올 수 있다.
+            //아이디에 대한 유효성
+            //영문자 또는 숫자로만 5글자 이상 12글자 이하기 맞는지
+            //맞지 않을 경우
+            //알람차 출력=> 제출 불가하게끔 기본이벤트 막기
+
+            /*
+            if(userId.length>=5 && userId.length <=12){ //글자수가 맞았을 경우
+
+                //각각의 문자들이 영문 또는 숫자로만 이뤄져 있는지 체크
+                for(let i=0; i<userId.length;i++){
+                    //숫자확인
+                    if((userId.charAt(i)>= 0 && userId.charAt(i) < 10)
+                    //영문확인
+                    || (userId.charAt(i)>='a' && userId.charAt(i) <= 'z')
+                    || (userId.charAt(i)>='A' && userId.charAt(i)<='Z')){
+
+                    }else{
+                        alert("유효한 아이디의 형식이 아닙니다.");
+                        return false;
+                    }
+                    
+                }
+
+            }else{ //애초에 글자수가 조건에 안맞을 경우
+                alert("유효한 아이디의 형식이 아닙니다.");
+                return false;
+            }
+            */
+
+            
+
+            //정규표현식을 통해서 유효한 아이디 형식에 해당하는 특정패턴을 만들어둘꺼임
+            const regExp = /^[a-zA-Z0-9]{5,12}$/;   /*^[시작  끝]{범위}$*/
+            if(!regExp.test(userId)){
+                alert("유효한 형식이 아닙니다. 다시 입력하세요");
+                document.getElementById("userId").select()
+                return false;
+            }
+
+            
+
+
+
+            //================================================================
+            //비밀번호 글자 8자 이상 16이하 ,영문자 + 숫자
+            //특수(@, . , !) 문자 포함
+
+            if(userPwd.length>=8 && userPwd.length <=16){ //비밀번호 글자수
+
+                //각각의 문자들이 영문 또는 숫자, 특수문자로 이뤄져 있는지 체크
+                for(let i = 0; i<userPwd.length;i++){
+                    //숫자확인
+                    if((userPwd.charAt(i)>=0 && userPwd.charAt(i)<10)
+
+                    //영문확인
+                    || (userPwd.charAt(i)>='a' && userPwd.charAt(i) <='z')
+                    || (userPwd.charAt(i)>='A' && userPwd.charAt(i) <='Z')){
+
+                    }else{
+                        alert("유효한 비밀번호의 형식이 아닙니다.");
+                        return false;
+                    }
+                }
+            }
+            //===========================================================
+
+
+
+            
+
+            //비밀번호와 비밀번호 확인이 맞는지 비교하는 함수
+            //두개의 비밀번호가 일치하지 않을 경우
+            //알람창 출력 => 제출 불가하게끔 기본 이벤트 막기
+            if(userPwd != checkPwd){
+                alert("일치하지 않습니다.");
+
+                return false; //실행 함수가 있는 validate();로 이동 false가 validate();안에 가만이 있기 때문에 앞에 retrun을 추가해서 기본 함수 수행 못하게 막는다.
+            };
+
+
+        }
 
 
     </script>
+
+
+
+
+
+
+
+
+
+
 
 
 
