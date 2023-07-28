@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(복사)정규표현식을 활용한 회원가입 폼</title>
+    <style>
+        .area{
+            border: 1px solid lightgray;
+            padding: 10px;
+            width: 600px;
+        }
+
+        label{
+            color: gray;
+            padding-left: 10px;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1> &lt;정규표현식을 활용한 회원가입 폼 &gt;</h1>
+    <form action="insert.me">
+        <div id="area1" class="area">
+            <br>
+            * 아이디 :
+            <input type="text" name="userId" id="userId" required> <br>
+            <label>첫글자는 반드시 영문자로, 그리고 영문자, 숫자 포함하여 총 4~12자리로 입력하시오</label>
+            <br><br>
+
+            * 비밀번호 :
+            <input type="password" name="userPwd1" id="userPwd1" required> <br>
+            <label>영문자, 숫자, 특수문자 포함하여총 8~15자리로 입력하시오</label>
+            <br><br>
+
+            * 비밀번호 확인 :
+            <input type="password" id="userPwd2" required> <br>
+            <label>위의 비밀번호와 일치하게 입력하시오.</label>
+            <br><br>
+
+            * 이름 :
+            <input type="text" name="userName" id="userName" required> <br>
+            <label>할글로만 이뤄줘야되며 2글자 이상으로 입력하시오.</label>
+            <br><br>
+
+            * 이메일 :
+            <input type="email" name="email" id="email"> <br>
+            <label>이메일 형식에 맞춰서 입력하시오.</label>
+            <br><br>
+
+            * 취미 :
+            <input type="text" name="hobby" id="hobby" list="hobbyList" placeholder="축구,농구,야구,독서 등">
+            <datalist id="hobbyList">
+                <option value="soccer">축구</option>
+                <option value="basketball">농구</option>
+                <option value="baseball">야구</option>
+                <option value="reading">독서</option>
+            </datalist>
+
+            <br><br>
+
+            * 거주지 :
+            <select name="address" id="address">
+                <option value="seoul" selected>서울</option>
+                <option value="incheon">인천</option>
+                <option value="busan">부산</option>
+            </select>
+
+            <br><br>
+
+            <input type="submit" value="회원가입">
+            <input type="reset" value=" 취소">
+            <br><br>
+        </div>
+    </form>
+
+
+</body>
+</html>
+
+        <script>
+            function validate(){
+                //아이디, 비밀번호, 비번 일치여부, 이름한글여부
+
+                //input 요소 객체들 가져다 놓기
+                const idInput = document.getElementById("userId");
+                const pwdInput1 = document.getElementById("userPwd1");
+                const pwdInput2 = document.getElementById("userPwd2");
+                const nameInput = document.getElementById("userName"); 
+
+
+            }
+        </script>
+        
+    
+
+
+
+</body>
+</html>
