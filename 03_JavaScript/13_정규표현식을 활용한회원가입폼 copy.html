@@ -17,12 +17,11 @@
             font-size: 10px;
         }
 
-
     </style>
 </head>
 <body>
        <h1>&lt정규표현식을 활용한 회원가입 폼&gt</h1>
-        <form action="insert.me" method="post">
+        <form action="insert.me" method="post"> <!--입력 폼이니까 form 태그 활용하기 , method="post" 입력시 주소창에 입력 정보가 안보인다.-->
             <div id="area1" class="area">
             * 아이디 : 
             <input type="text" name="userId" id="userId" required> <br>
@@ -32,7 +31,7 @@
             <input type="password" name="userPwd1" id="userPwd1" required> <br>
             <label>영문자, 숫자, 특수문자 표함하여 총 8~15자로 입력하세요.</label> <br>
 
-            * 비밀번호 확인 : 
+            * 비밀번호 확인 : <!--비밀번호 확인에는 name값이 꼭 필요하지 않는다. => 서버로 넘길 필요가 없기 때문에-->
             <input type="password" name="userPwd2" id="userPwd2"> <br>
             <label>위의 비밀번호와 동일하게 입력하세요.</label><br>
 
