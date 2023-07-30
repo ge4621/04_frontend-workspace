@@ -8,7 +8,7 @@
     <h1>입력양식 관련 태그</h1>
 
     <h2>input 태그</h2>
-    <p>사용자에게 입력받을 수 있는 텍스트상자 또는 체그박스 등등을 만들수 있음</p>
+    <p>사용자에게 입력받을 수 있는 텍스트상자 또는 체크박스 등등을 만들수 있음</p>
 
     아이디 : <input type="text"> <br>   <!--인라인 요소 : 블럭이엿으며 아래로 떨어져야 함-->
     비밀번호 : <input type="password"> <br>
@@ -20,13 +20,13 @@
 
     <h1>폼 관련 태그</h1>
     <p>
-        form 태그 내에 submit 버튼 클릭시 해당 form 안에 작성된 <br> 
-        사용자가 입력한 값들을 서보로 넙기면서 요청한 역할 수행<br><br>
+        form 태그 내에 submit 버튼 클릭시 해당 form 안에 작성된다. <br> 
+        사용자가 입력한 값들을 서버로 넘기면서 요청한 역할 수행<br><br>
 
         form action="" medthod=""<br><br>
 
         * action 속성 : 해당 from에 사용자가 입력한 값들을 전달하면서 요청할 서버의 경로를 제시 <br>
-        * medthod 속성 : 요청 전송 방식을 지정하는 속성(get(기본값)/ post)
+        * method 속성 : 요청 전송 방식을 지정하는 속성(get(기본값)/ post)
             > get 방식 : 요청시 사용자가 입력한 값들이 url노출되는 방식 <br>
             > post 방식 : 요청시 사용자가 입력한 값들이 url에 노출되지 않는 방식
 
@@ -41,6 +41,8 @@
         </fieldset>
 
     </form>
+
+    <br>
 
     <fieldset>
         안녕하세요
@@ -89,8 +91,7 @@
         <p>- 비밀번호를 입력할 수 있는 텍스트 상자</p>
 
         비밀번호 : 
-        <input type="password" name="userPwd" placeholder="영문,숫자,특주문자 8~15" maxlength="15"
-        required>
+        <input type="password" name="userPwd" placeholder="영문,숫자,특주문자 8~15" maxlength="15" required>
 
         <h3>type="search|url|email|phone"</h3>
         <p>-겉모습은 일반 텍스트 상자와 유사하지만 각각의 정보에 맞게 세부화된 기능 제공</p>
@@ -127,7 +128,6 @@
 
             내용 : <textarea name="content" placeholder="내용을 입력해주세요" cols="35" rows="10" style="resize:none ;"></textarea> 
             <br><br>
-
             <input type="submit" value="작성하기">
 
         </fieldset>
@@ -211,7 +211,6 @@
         <label for="radioF">여자</label>
 
         <!--value 안쓰면 on이 넘어온다.!!-->
-
         <h3>체크박스 (type="checkbox")</h3>
         <p>
             -제시한 여러개의 값들 중에서 여러개 선택가능할 경우 <br>
@@ -229,7 +228,7 @@
         <label for="movie">영화보기</label>
 
         <!--동일한 키값으로 여러 value 넘어온 경우에는 String[] 배열에 담긴다.!!-->
-
+        <br>
         <input type="submit">
     </form>
 
@@ -298,23 +297,13 @@
         <h4>HTML5에서 새로 추가된 기능 datalist</h4>
         <p>- 사용자에게 직접 키보드로 값을 입력받을 수 있고, 목록에서 선택할 수도 있음</p>
 
-        <input type="text" name="color" list="colorList">
+        <input type="text" name="color" list="colorList" placeholder="검정색, 노랑색, 하늘색">
         <datalist id="colorList">
             <option value="black">검정색</option>
-            <option value="black">검정색</option>
+            <option value="yellow">노랑색</option>
             <option value="skyblue">하늘색</option>
         </datalist>
-
-
-
-
         <input type="submit">
-
-
-
     </form>
-
-
-
 </body>
 </html>
