@@ -45,6 +45,9 @@
             background-color: lightgray;
             
         }
+        #domain{
+            background-color: lightgray;
+        }
 
 
     </style>
@@ -52,7 +55,7 @@
 </head>
 <body>
     <div id="area">
-            <form action="">
+            <form action="insert.no" method="post">
                 <table border="0">
                     <tr>
                         <td>아이디</td>
@@ -85,7 +88,12 @@
                     <tr>
                         <td>이메일</td>
                         <th id="a"><input type="email" name="email" id="email">
-                            @<input type="email" neme="email" id="email">
+                            @<!-- <input type="email" neme="email" id="email"> -->
+                            <select name="domain" id="domain">
+                                <option value="no">직접입력</option>
+                                <option value="na">naver.com</option>
+                                <option value="go">google.com</option>
+                            </select>
                         </th>
                     </tr>
                     <tr>
@@ -144,10 +152,23 @@
         $("#a").click(function(){
             if($("#checkedPwd").val().length==0){
                 $("#userPwdchbox").html("필수입력사항입니다.").css(style);
-            }else if($("#checkedPwd").val().length>0){
+            }else if($("#checkedPwd,").val().length>0){
                 $("#userPwdchbox").html("");
             }
         })
+
+        $("#userPwd,#userId").click(function(){
+            if($("#checkedPwd").val().length>0){
+                $("#userPwdchbox").html("");
+            }
+        })
+       
+
+
+
+       
+
+
    </script>
 
 
