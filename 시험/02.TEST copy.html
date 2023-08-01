@@ -110,7 +110,7 @@
                     </tr>
                     <tr>
                         <th></th>
-                        <th><input type="text" name="address1" id="address1"></th>
+                        <th><input type="text" name="address1" id="address"></th>
                     </tr>
                     <tr>
                         <th></th>
@@ -132,7 +132,7 @@
         $("#userPwd").click(function(){
             $("#userPwdbox").html("영문자 대/소문자 특수문자, 숫자 포함 8 ~ 32자").css(style);
         })
-
+        
         $("#userPwd,#checkedPwd,#a").click(function(){
             if($("#userId").val().length==0){
                 $("#userIdbox").html("필수입력사항입니다.").css(style);
@@ -162,17 +162,8 @@
                 $("#userPwdchbox").html("");
             }
         })
+        
        
-
-
-
-       
-
-
    </script>
-
-
-
-
 </body>
 </html>
