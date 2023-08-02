@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시각적인 효과메소드</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> 
+
+    <style>
+        div{
+            background-color: beige;
+            border: 1px solid yellow;
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 10px; 
+            cursor: pointer;
+        }
+
+        p{
+            border: 1px solid lightgray;
+            width: 300px;
+            height: 100px;
+            border-radius: 10px;
+            margin-top: 5px;
+            padding: 10px;
+            box-sizing: border-box;
+            display: none;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    
+    <h3>* slideDown()과 slideUp()</h3>
+
+    <div>Q.반품 언제되나요?</div>
+    <p>A. 지금 확인 중 입니다.</p>
+
+    <div>Q. 상품 위치를 알고 싶습니다.</div>
+    <p>A. 배송 조회 해보세요.</p>
+
+    <div>Q. 8XL사이즈도 있나요?</div>
+    <p>A. 네 있어요</p>
+
+    <div>Q. 판매자가 연락이 안됩니다.</div>
+    <p>A.네 저도 안됩니다.</p>
+
+    <div>Q. 연락이 가능한 시간을 알려주세요.</div>
+    <p>A.몰루</p>
+
+    <script>
+        $(function(){
+            $("div").click(function(){
+                //$(this) : 클릭이벤트가 발생한 div 요소
+                //우리는 그 요소의 뒤의 요소를 선택해야함.(같은 레벌(next)에 있음)
+
+                //$(this).next() : 클릭이벤트가 발생한 div 요소 뒤에 있는 p메소드
+                //보여지는 상태면 사라지게, 안보이면 나타나게 
+                const $p = $(this).next(); //jQuery 방식으로 선택된 요소를 담아둘 때
+
+                if($p.css("display")=="none"){
+
+                    //기존꺼는 닫히면서 지금꺼만 열리게(그낭 다 닫고 지금 꺼만 열기)
+                    $(this).siblings("p").slideUp();
+
+                    //보여지게끔
+                    //$p.css("display","block");
+                    $p.slideDown();
+                }else{
+                    $p.slideUp();
+                }
+
+
+            })
+        })
+    </script>
+
+
+
+</body>
+</html>
