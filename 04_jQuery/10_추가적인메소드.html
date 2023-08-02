@@ -83,7 +83,6 @@
                 name:"차은우",
                 age:20,
                 address:"서울"
-
             }
 
             console.log("=======================================")
@@ -99,7 +98,27 @@
             //2)each 메소드 이용
             $.each(student,function(key,value){
                 console.log("속성명 : " + key + ", 속성값 : " + value);
+                console.log(key);
             })
+
+            //3)each 메소드 이용 -
+            console.log("===========123456============================")
+
+            //console.log(student);
+            //console.log(student.value);
+           //console.log(student.key);
+           //console.log(key);
+
+
+           $(student).each(function(key,value){
+                console.log(key)
+                console.log(value)
+           })
+
+
+
+
+
 
             $("#btn").click(function(){
                 //db로 조회했다는 가정하에
