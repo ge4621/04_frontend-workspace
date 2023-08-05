@@ -77,7 +77,7 @@
             //$(doucment.getElementById("abc").html()) 이렇게 바꾸기
 
 
-            console.log("=====================================")
+            console.log("===============객체======================")
 
             const student = {
                 name:"차은우",
@@ -85,7 +85,7 @@
                 address:"서울"
             }
 
-            console.log("=======================================")
+            console.log("==================111111=====================")
 
             //1)for in문을 이용
             for(let key in student){ //객체를 반복문을 돌면 key값이 담김
@@ -93,7 +93,7 @@
                 console.log("속성명: " + key + ", 속성값 : " + student[key]); //student.key는 오류 -> student[key]는 성공
             }
 
-            console.log("======================================")
+            console.log("=============22222222=========================")
 
             //2)each 메소드 이용
             $.each(student,function(key,value){
@@ -102,7 +102,7 @@
             })
 
             //3)each 메소드 이용 -
-            console.log("===========123456============================")
+            console.log("===========13333333==========================")
 
             //console.log(student);
             //console.log(student.value);
@@ -114,13 +114,10 @@
            $(student).each(function(key,value){
                 console.log(key)
                 console.log(value)
+                console.log(student.name)
            })
 
-
-
-
-
-
+        
             $("#btn").click(function(){
                 //db로 조회했다는 가정하에
                 const students = [{name:"문동은",age:20,address:"서울"},

@@ -38,7 +38,8 @@
 
     <script>
         function documentWrite(){
-            // document.write("안녕하세요.")
+             document.write("안녕하세요. ")
+             document.write("안녕하세요 반갑습니다.")
             //document.write("<b>안녕하세요</b><br><h2>반가워</h2>")
             // 출력할 문구에 html 태그가 있을 경우 해석해서 시각적인 요소로 보여짐
 
@@ -116,15 +117,19 @@
             var divEl = document.getElementById("area2")
 
             if(result){
-                // console.log("정신들 차리세요.")
+                console.log("정신들 차리세요.")
                 divEl.innerHTML = "<h3>정신들 차리세요!!!!!!</h3>"
             }else{
-                // console.log("good!!")
+                console.log("good!!")
                 divEl.innerHTML = "<h3>good~~~~</h3>"
             }
         
         }
+
     </script>
+
+    
+
 
     <hr>
 
@@ -145,8 +150,8 @@
            var name = prompt("당신의 이름은 무엇입니까?");
            var age = prompt("당신의 나이는 몇살입니까?");
 
-        //   console.log(name)
-        //   console.log(age)
+          console.log(name)
+          console.log(age)
 
         //   console.log(1); //콘솔에 숫자가 입력되면 파란색으로 보임
 

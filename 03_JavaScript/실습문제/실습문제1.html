@@ -69,22 +69,135 @@
         }
         
         document.write(str);
-
-
-
-
     }
+</script>
 
+<br>
 
+<hr>
+<h1>1번 다시 해보기</h1>
 
+<button onclick="btn();">다시 해보기</button>
+<div id="table"></div>
+
+<script>
+    function btn(){
+        var col = prompt("몇열을 입력하시겠습니까?");
+        var row = prompt("몇열을 입력하시겠습니까?");
+
+        var str = "<table border='1'>";
+        
+
+        for(var i = 1 ; i <= col;i++){
+            str += "<tr>";
+                for(var j = 1 ;j<=row;j++){
+                    str += "<td></td>";
+                }
+                if(i==col){
+                    str +="</tr></table>";
+                }else{
+                    str +="</tr>"
+                }
+        }
+        var el = document.getElementById("table");
+        el.innerHTML = str; 
+    }
+    
 </script>
 
 
+<hr>
+<h1>2번 다시해보기</h1>
+
+<button onclick="btn();">다시해보기</button>
+<div id="table3"></div>
+
+<script>
+    function btn(){
+        var aa = prompt("행을 입력하시오");
+        var bb = prompt("열을 입력하시오");
+
+        var str3 = "<table border='1'>";
+        let nu=1;
+        for(var i = 1; i<=aa;i++){
+            str3 += "<tr>";
+            for(var j = 1; j<=bb; j++){
+                str3 += "<td>"+nu+"</td>";
+                nu++;
+            }
+            if(i==aa){
+                str3+="</tr></table>";
+            }else{
+                str3 += "</tr>";
+            }
+            
+        }
+        document.write(str3);
+    }
+</script>
+
+<hr>
+<h1>첫번째 행 th</h1>
+
+<button onclick="table5();">응용해보기</button>
+<div id="table4"></div>
+
+<script>
+    function table5(){
+        const cc = prompt("행을 입력하세요");
+        const dd = prompt("열을 입력하세요");
+
+        let str4 = "<table border='1'>"
+        
+        
+        //첫번째 행 th
+        str4 += "<tr>";
+        for(let j = 1;j<=dd;j++){
+            str4 += "<th>" + j + "</th>";
+            
+        }
+        str4 += "</tr>";
+
+        //나머지
+        for(let i = 1; i<=cc;i++){
+            str4 += "<tr>";
+                for(let j = 1; j <=dd;j++){
+                    str4 += "<td>"+j+"</td>";
+                    
+                }
+            if(i==cc){
+                str4 += "</tr></table>";
+            }else{
+                str4 += "</tr>";
+            }
+        }
+
+        //const rr = document.getElementById("table4");
+        //rr.innerHTML=str4;
+
+        document.write(str4);
 
 
+    }
+</script>
 
 
+<br>
+<hr>
+<br>
 
+<table border="1">
+    <tr>
+        <th>dfsf</th>
+        <th>df</th>
+        <th>df</th>
+    </tr>
+    <tr>
+        <td>adf</td>
+        <td>adf</td>
+        <td>adf</td>
+    </tr>
+</table>
 
 
 </body>
