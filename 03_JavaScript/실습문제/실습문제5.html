@@ -49,11 +49,69 @@
                     break;
 
             }
-
-            
         }
 
     </script>
+    <br><br>
+    <hr>
+    <br>
+
+    <h2>다시 해보기</h2>
+
+    첫번째 값 : <input type="text" name="one" id="one"> <br>
+    두번째 값 : <input type="text" name="two" id="two"> <br>
+    <button onclick="a();">+</button>
+    <button onclick="b();">-</button>
+    <button onclick="c();">x</button>
+    <button onclick="d();">/</button>
+    <button onclick="e();">%</button>
+
+    <br><br>
+    <div id="area1" class="area">계산 결과</div>
+
+    <script>
+        function a(){
+            const one = document.getElementById("one").value;
+            const two = document.getElementById("two").value;
+            const area1 = document.getElementById("area1");
+
+            area1.innerHTML = "계산결과 : " + (Number(one) + Number(two));
+        }
+
+        function b(){
+            const one = document.getElementById("one").value;
+            const two = document.getElementById("two").value;
+            const area1 = document.getElementById("area1");
+
+            area1.innerHTML = "계산결과 : " + (Number(one) - Number(two));
+        }
+
+        function c(){
+            const one = document.getElementById("one").value;
+            const two = document.getElementById("two").value;
+            const area1 = document.getElementById("area1");
+
+            area1.innerHTML = "계산결과 : " + (Number(one) * Number(two));
+        }
+
+        function d(){
+            const one = document.getElementById("one").value;
+            const two = document.getElementById("two").value;
+            const area1 = document.getElementById("area1");
+
+            area1.innerHTML = "계산결과 : " + (Number(one) / Number(two));
+        }
+
+        function e(){
+            const one = document.getElementById("one").value;
+            const two = document.getElementById("two").value;
+            const area1 = document.getElementById("area1");
+
+            area1.innerHTML = "계산결과 : " + (Number(one) % Number(two));
+        }
+    </script>
+
+
 
 
 

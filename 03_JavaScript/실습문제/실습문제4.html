@@ -36,6 +36,7 @@
 
         }
     </script>
+    <br><br>
 
     <hr>
 
@@ -62,5 +63,74 @@
             }
         }
     </script>
+
+    <br><br>
+    <hr>
+    <br>
+
+    <h3>문제 1. 다시 해보기</h3>
+
+   <fieldset>
+        <legend>보기</legend>
+        <input type="text" name="bogi" id="bogi">
+   </fieldset>
+
+   <br>
+
+   <div class="box big" id="area3"></div> <br>
+   <button onclick="check3();">확인하기3</button> 
+
+   <script>
+    function check3(){
+        var area3 = document.getElementById("area3");
+
+        var bogi = document.getElementById("bogi").value.length;
+
+        area3.innerHTML = "보기의 문자열의 길이는 " + bogi + "입니다.";
+    }
+   </script>
+
+   <br><br>
+   <hr>
+   <br>
+
+   <h3>문제 2. 다시 하기</h3>
+
+   <fieldset>
+        <legend>보기</legend>
+        <p id="p">콜라,사이다,햄버거,피자,한약</p>
+   </fieldset>
+
+   <br><br>
+
+   <div id="area4" class="box big"></div>
+   <br><br>
+   <button onclick="check4();">확인하기</button>
+
+   <script>
+        function check4(){
+            var area4 = document.getElementById("area4");
+            var p = document.getElementById("p").innerHTML.split(",");
+
+            for(let i = 0; i <p.length ; i++){
+                area4.innerHTML += (i + 1)+ "." + p[i] + "<br>";
+            }
+        }
+   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

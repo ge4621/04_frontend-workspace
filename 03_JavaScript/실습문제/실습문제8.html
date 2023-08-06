@@ -24,9 +24,9 @@
             const box = document.getElementById("box");
 
 
-            if(box.value){ 
+            if(box.value){ //box안에 값이 있을 경우
                 box.value += ","+input.value;
-            }else{
+            }else{//box안에 값이 없을 경우
                 box.value += input.value;
             }
             input.value="";
@@ -46,10 +46,10 @@
 
 
     <script>
-        const arr = [];
+        const arr = []; //빈배열 만들기
         function test1(){
             const input1 = document.getElementById("input1").value; //입력창
-            const input2 = document.getElementById("input1");
+            const input2 = document.getElementById("input1"); 
             const box1 = document.getElementById("box1");   //결과창
 
             console.log(input1);

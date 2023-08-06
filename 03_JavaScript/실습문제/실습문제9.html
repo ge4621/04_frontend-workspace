@@ -28,12 +28,14 @@
 
     <script>
         function submit(){
-            const dfood = document.getElementById("dfood").value;
-            const food = document.getElementById("food").value;
+            const dfood = document.getElementById("dfood").value; //삭제할 음식의 이름
+            const food = document.getElementById("food").value; //추가할 음식의 이름
             const area1 = document.getElementById("area1");
             const p = document.getElementById("p").innerHTML;
 
             const arr = p.split(" ");
+
+            console.log(arr)
 
             arr.splice(arr.indexOf(dfood),1,food);
             
@@ -41,6 +43,71 @@
 
         }
     </script>
+
+
+    <hr>
+    <br>
+    <h3>다시 해보기</h3>
+
+    <fieldset>
+        <legend>보기</legend>
+        <p id="foods">피자 치킨 당근 햄버거 떡볶이</p>
+    </fieldset>
+    
+    <input type="text" id="input1" placeholder="삭제할 음식의 이름">
+    <input type="text" id="input2" placeholder="추가할 음식의 이름"><br><br>
+    <div id="area3" class="area"></div>
+    <br>
+    <button onclick="fin();">출력</button>
+
+    <script>
+        function fin(){
+            const foods = document.getElementById("foods").innerHTML.split(" ");
+            const input1 = document.getElementById("input1").value;
+            const input2 = document.getElementById("input2").value;
+            const area3 = document.getElementById("area3");
+
+            
+            console.log(foods)
+            console.log(input1)
+            console.log(input2)
+            
+
+            foods.splice(foods.indexOf(input1),1,input2);
+            //splice(시작인덱스, 제거할 개수, 추가요소)
+
+            area3.innerHTML = foods
+
+
+
+
+
+
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

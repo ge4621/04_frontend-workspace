@@ -36,5 +36,60 @@
         }
     </script>
 
+
+    <hr>
+    <h2>다시하기</h2>
+    <fieldset>
+        <legend>보기</legend>
+        <p id="one">r b</p>
+        <p id="two">e v o l </p>
+    </fieldset>
+
+    <input type="text" name="three" id="three"> 
+    <button onclick="fin();">처리</button>
+
+    <script>
+        function fin(){
+            const one = document.getElementById("one").innerHTML.split(" ");
+            const two = document.getElementById("two").innerHTML.split(" ");
+
+            const three = document.getElementById("three");
+
+            const one1 = one.reverse();
+            const two1 = two.reverse();
+
+            three.value = one1.join(" ");
+            three.value += two1.join(" ");
+
+
+
+
+            console.log(one);
+            console.log(two);
+            console.log("----")
+            console.log(one1);
+            console.log(two1);
+
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

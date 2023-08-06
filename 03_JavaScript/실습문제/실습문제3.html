@@ -42,14 +42,52 @@
     상품명 : 
     <input type="text" name="product1" id="product1" placeholder="구매 상품을 입력하세요."> <br><br>
     가격 : 
-    <input type="text" name="price1" id="pricr1" placeholder="구매가격을 입력하세요."> <br><br>
+    <input type="text" name="price1" id="price1" placeholder="구매가격을 입력하세요."> <br><br>
 
-    <button onclick="">출력하기</button>
+    <button onclick="test1();">출력하기</button>
     <br><br>
     <div id="area2" class="class" style="background-color: bisque;"></div>
 
 
+    <script>
+        function test1(){ //모두 아이디로 접근
+            var area2 = document.getElementById("area2");
 
+            var user = document.getElementById("user").value;
+            var product1 = document.getElementById("product1").value;
+            var price1 = document.getElementById("price1").value;
+
+            area2.innerHTML = "구매자 : " + user + "<br>" + "구입 상품 : " +product1 + "<br>" + "가격 : " + price1;
+        }
+    </script>
+    <br>
+    <hr>
+    <h3>태그로 접근 하기(실행하고 싶으면 위에코드 다 막기)</h3> 
+
+    구매자 :
+    <input type="text" name="user2" id="user2" placeholder="구매자의 이름을 입력하세요."> <br><br>
+    상품명 : 
+    <input type="text" name="product2" id="product2" placeholder="구매 상품을 입력하세요."> <br><br>
+    가격 : 
+    <input type="text" name="price2" id="price2" placeholder="구매가격을 입력하세요."> <br><br>
+
+    <button onclick="test2();">출력하기</button>
+    <br><br>
+    <div id="area3" class="class" style="background-color: bisque;"></div>
+
+
+    <script>
+        function test2(){//모두 태그이름으로 접근
+            var area3 = document.getElementById("area3");
+
+            var user2 = document.getElementsByTagName("input")[0].value;
+            var product2 = document.getElementsByTagName("input")[1].value;
+            var price2 = document.getElementsByTagName("input")[2].value;
+
+            area3.innerHTML = "구매자 : " + user2 + "<br>" + "구입 상품 : " +product2 + "<br>" + "가격 : " + price2;
+
+        }
+    </script>
 
 
 

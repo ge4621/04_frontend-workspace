@@ -49,6 +49,48 @@
         }
     </script>
 
+    <hr>
+
+    <br>
+    <h2>다시 해보기</h2>
+
+    <fieldset>
+        <legend>보기</legend>
+        <p>사과,바나나,당근</p>
+        <p>김밥,치즈,떡볶이,햄버거</p>
+        <p>환타,사이다,콜라</p>
+        <p>고양이,강아지</p>
+    </fieldset>
+
+    <br>
+    <input type="text" name="box" id="box"> <br>
+    <button onclick="fin();">전송하기</button>
+
+    <script>
+        function fin(){
+            const food = document.getElementsByTagName("p")[0].innerHTML.split(",");
+            const food1 = document.getElementsByTagName("p")[1].innerHTML.split(",");
+            const food2 = document.getElementsByTagName("p")[2].innerHTML.split(",");
+            const food3 = document.getElementsByTagName("p")[3].innerHTML.split(",");
+            
+            const box = document.getElementById("box").value;
+
+            const arr = food.concat(food1,food2,food3);
+            
+            const index = arr.indexOf(box);
+           
+           
+            alert(box + "는 index" + index + "째에 있습니다.");
+
+            console.log(food);
+            console.log(food1);
+            console.log(food2);
+            console.log(food3);
+            console.log(arr);
+            console.log(index);
+
+        }
+    </script>
 
 
 </body>
